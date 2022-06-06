@@ -16,7 +16,7 @@ func (c *WordCounter) Write(s []byte) (int, error) {
 	for scanner.Scan() {
 		*c++
 	}
-	if err := scanner.Err(); err != nil {
+	if err := scanner.Err(); err != nil { //asdfdsd
 		return int(*c), err
 	}
 	return int(*c), nil
@@ -24,7 +24,6 @@ func (c *WordCounter) Write(s []byte) (int, error) {
 
 func (c *LineCounter) Write(s []byte) (int, error) {
 	scanner := bufio.NewScanner(strings.NewReader(string(s)))
-
 	for scanner.Scan() {
 		*c++
 	}
